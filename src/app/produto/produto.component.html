@@ -1,0 +1,17 @@
+<div class="container">
+    <div *ngIf="produtos.length === 0" class="produto">
+      Nenhum produto disponível no momento
+    </div>
+    <div class="produto-list">
+      <div *ngFor="let produto of produtos" class="produto">
+        <h3>{{ produto.nome }}</h3>
+        <p>{{ produto.descricao }}</p>
+        <p>Preço: R$ {{ produto.preco }}</p>
+        <button 
+          [ngClass]="{'disabled': !produto.emEstoque}" 
+          [disabled]="!produto.emEstoque">Comprar</button>
+      </div>
+
+    </div>
+  </div>
+  
